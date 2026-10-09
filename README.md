@@ -142,28 +142,29 @@ The backend sends structured prompts to Gemini for three distinct tasks:
 
 ## 📁 Project Structure
 
-```
-genai-job-prep/
-├── backend/
-│   ├── models/              # User, Resume, Analysis schemas
-│   ├── routes/               # Auth, resume, AI, PDF routes
-│   ├── controllers/          # Business logic per feature
-│   ├── middleware/
-│   │   ├── auth.js           # JWT verification
-│   │   └── blacklist.js      # Token blacklist check
-│   ├── utils/
-│   │   ├── geminiClient.js   # Gemini API wrapper
-│   │   ├── resumeParser.js   # Resume text/skill extraction
-│   │   └── pdfGenerator.js   # Puppeteer PDF logic
-│   ├── .env
-│   └── server.js
-├── frontend/
+```text
+Resume-Analyzer/
+├── Backend/
 │   ├── src/
-│   │   ├── components/       # Reusable UI components
-│   │   ├── pages/            # Login, Dashboard, Resume Upload, Results
-│   │   └── App.js
-│   └── package.json
-└── README.md
+│   │   ├── config/        # Database connection
+│   │   ├── controllers/   # Auth and interview logic
+│   │   ├── middlewares/   # JWT auth, Multer file upload
+│   │   ├── models/        # User, InterviewReport, Blacklist
+│   │   ├── routes/        # API routes
+│   │   └── services/      # AI service
+│   ├── app.js
+│   └── server.js
+│
+└── Frontend/
+    ├── src/
+    │   ├── features/
+    │   │   ├── auth/      # Login, Register, context, hooks
+    │   │   └── interview/ # Home, Interview pages, context, hooks
+    │   ├── styles/
+    │   ├── App.jsx
+    │   ├── app.routes.jsx
+    │   └── main.jsx
+    └── index.html
 ```
 
 ---
