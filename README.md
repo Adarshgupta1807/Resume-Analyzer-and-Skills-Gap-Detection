@@ -127,16 +127,16 @@ The backend sends structured prompts to Gemini for three distinct tasks:
 
 ## 🔌 API Endpoints
 
-| Method | Endpoint | Description |
-|---|---|---|
-| `POST` | `/api/auth/signup` | Register a new user |
-| `POST` | `/api/auth/login` | Authenticate user and issue JWT |
-| `POST` | `/api/auth/logout` | Blacklist the current JWT |
-| `POST` | `/api/resume/upload` | Upload and parse a resume |
-| `POST` | `/api/analyze/skill-gap` | Run AI skill gap analysis against a job description |
-| `POST` | `/api/interview/generate` | Generate AI-based interview questions |
-| `POST` | `/api/resume/optimize` | Generate ATS-optimized resume content |
-| `GET` | `/api/resume/download` | Generate and download the resume as a PDF via Puppeteer |
+| Method | Endpoint | Description | Access |
+|---|---|---|---|
+| `POST` | `/api/auth/register` | Register a new user 
+| `POST` | `/api/auth/login` | Authenticate user and issue JWT (stored in cookie) 
+| `GET` | `/api/auth/logout` | Clear JWT from cookie and add the token to the blacklist
+| `GET` | `/api/auth/get-me` | Get details of the currently logged-in user 
+| `POST` | `/api/interview/` | Upload resume (PDF) along with self description and job description to generate an AI interview report (technical and behavioral questions, skill gaps) 
+| `GET` | `/api/interview/` | Get all interview reports of the logged-in user 
+| `GET` | `/api/interview/report/:interviewId` | Get a specific interview report by ID 
+| `POST` | `/api/interview/resume/pdf/:interviewReportId` | Generate an ATS-optimized resume and download it as a PDF via Puppeteer
 
 ---
 
