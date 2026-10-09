@@ -209,11 +209,10 @@ Create a `.env` file inside the `backend` folder:
 
 ## 🚀 Future Scope
 
-- Refresh token rotation for longer, more secure sessions
-- Resume versioning so users can track multiple optimized versions
-- Multi-format resume export (DOCX in addition to PDF)
-- Integration with job boards to auto-fetch job descriptions
-- Analytics dashboard showing interview readiness progress over time
+- **Multi-Format Export:** Download resumes in DOCX in addition to PDF
+- **AI Voice Interview:** Practice mock interviews through real-time voice conversation with AI
+- **Job Recommendations:** Suggest relevant jobs based on the user's resume and skills
+- **Resume Builder:** Create a resume from scratch with a guided form and live preview
 
 ---
 
